@@ -3,16 +3,36 @@ import { sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
 
-import { ran } from '../api/script.js';
-import { callback_scb } from '../api/getJson.js';
+import { Dashboard_Get_Vendor } from '../api/Dashboard_Get_Vendor.js';
+import { Dashboard_Invoice } from '../api/Dashboard_Invoice.js';
+import { Dashboard_Company } from '../api/Dashboard_Company.js';
+import { Dashboard_Emission } from '../api/Dashboard_Emission.js';
+import { Dashboard_Chart } from '../api/Dashboard_Chart.js';
+import { Dashboard_transaction } from '../api/Dashboard_transaction.js';
+import { Dashboard_User_Info } from '../api/Dashboard_User_Info.js';
+import { Get_Months } from '../api/Get_Months.js';
+import { Upload_File } from '../api/Upload_File.js';
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = ran()
-  //response = callback_scb(scenario)
+  //============= Dashboard ================//
+  //response = Dashboard_Get_Vendor()
+  //response = Dashboard_Invoice()
+  //response = Dashboard_Company()
+  //response = Dashboard_Emission()
+  //response = Dashboard_Chart()
+  //response = Dashboard_transaction()
+  //response = Dashboard_User_Info()
+
+  //============= Carbon Receipt ================//
+  //response = Get_Months()
+
+  //============= Upload ================//
+  response = Upload_File()
+
 
   
   error_check(response);
