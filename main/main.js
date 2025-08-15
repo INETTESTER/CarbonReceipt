@@ -12,6 +12,12 @@ import { Dashboard_transaction } from '../api/Dashboard_transaction.js';
 import { Dashboard_User_Info } from '../api/Dashboard_User_Info.js';
 import { Get_Months } from '../api/Get_Months.js';
 import { Upload_File } from '../api/Upload_File.js';
+import { GETmonthetaxesbyMonthID } from '../api/GETmonthetaxesbyMonthID.js';
+import { GetCarbonReceiptAndEtaxInvoiceDetailsByMonthID } from '../api/GetCarbonReceiptAndEtaxInvoiceDetailsByMonthID.js';
+import { CreateCarbonReceipt } from '../api/CreateCarbonReceipt.js';
+import { SearchDocumentOneboxMOCKonebox_search } from '../api/SearchDocumentOneboxMOCKonebox_search.js';
+import { Get_Uploaded_files } from '../api/Get_Uploaded_files.js';
+import { Get_file_by_ID } from '../api/Get_file_by_ID.js';
 
 
 
@@ -19,21 +25,25 @@ import { Upload_File } from '../api/Upload_File.js';
 
 export default function () {    //เรียกใช้ API ใน export default function
   //============= Dashboard ================//
-  //response = Dashboard_Get_Vendor()
-  //response = Dashboard_Invoice()
-  //response = Dashboard_Company()
-  //response = Dashboard_Emission()
-  //response = Dashboard_Chart()
-  //response = Dashboard_transaction()
-  //response = Dashboard_User_Info()
+  response = Dashboard_Get_Vendor()
+  // response = Dashboard_Invoice()
+  // response = Dashboard_Company()
+  // response = Dashboard_Emission()
+  // response = Dashboard_Chart()
+  // response = Dashboard_transaction()
+  // response = Dashboard_User_Info()
 
   //============= Carbon Receipt ================//
   //response = Get_Months()
+  //response = GETmonthetaxesbyMonthID()
+  //response = GetCarbonReceiptAndEtaxInvoiceDetailsByMonthID()
+  //response = CreateCarbonReceipt()
+  //response = SearchDocumentOneboxMOCKonebox_search()
 
   //============= Upload ================//
-  response = Upload_File()
-
-
+  //response = Upload_File()
+  //response = Get_Uploaded_files()
+  //response = Get_file_by_ID()
   
   error_check(response);
   sleep(1)
